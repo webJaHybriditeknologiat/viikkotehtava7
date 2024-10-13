@@ -46,7 +46,7 @@ export default function App() {
       </View>
       <FlatList
         data={state.todos}
-        keyExtractor={(index) => index.toString()}
+        keyExtractor={(item, index) => index.toString()}
         renderItem={({ item, index }) => (
           <TouchableOpacity onPress={() => removeTodo(index)}>
             <Text style={styles.todoItem}>{item}</Text>
@@ -65,6 +65,7 @@ const styles = StyleSheet.create({
   inputContainer: {
     flexDirection: 'row',
     alignItems: 'center',
+    marginTop: 50,
     marginBottom: 8,
   },
   input: {
